@@ -33,10 +33,5 @@
 - **エディタ:** Visual Studio Code (+ LaTeX Workshop 拡張)
 
 ### コンパイル方法
-WSL ターミナル上で以下のコマンドを実行してください。
-```bash
-# latexmk を使用して PDF を生成
-latexmk report_main.tex
-
-# 生成物（中間ファイル）の掃除
-latexmk -c
+拡張機能LaTex Workshopの機能により、`.tex`ファイルの更新を検知すると自動でコンパイルされます。
+作成された`pdf`ファイルを閲覧するためには`main.tex`を開いた状態で`ctrl + alt + v`を入力します。
