@@ -1,0 +1,31 @@
+%プリアンブル
+%ドキュメントクラス
+\documentclass{jlreq}    %このオプションで.pngや.jpgが使えるようになる
+
+%箇条書きの拡張
+\usepackage{enumerate}
+
+%数学系
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{empheq}
+\usepackage{amssymb}
+
+%tableを指定した場所に確実に描画する
+\usepackage{here}
+\usepackage{booktabs}
+\usepackage{array}
+
+%画像を挿入
+\usepackage{graphicx}
+
+%URLに使われた記号でコンパイルに詰まる事態の回避
+\usepackage{url}
+
+%本体
+\begin{document}
+
+    \input{sections/cover.tex}          % 表紙
+    \input{sections/01_summary.tex}     % 授業内容のまとめ
+    
+\end{document}
