@@ -24,12 +24,12 @@
 
 本プロジェクトは WSL (Windows Subsystem for Linux) 上の TeX Live 環境で作成しています。
 
-### 動作環境
+## 動作環境
 - **OS:** WSL2 (Ubuntu 24.04.3 LTS)
 - **TeX 構成:** TeX Live (パッケージ: `texlive-full`)
 - **コンパイラ:** LuaLaTeX
 - **エディタ:** Visual Studio Code (+ LaTeX Workshop 拡張)
 
-### コンパイル方法
+## コンパイル方法
 拡張機能LaTex Workshopの機能により、`.tex`ファイルの更新を検知すると自動でコンパイルされます。
 作成された`pdf`ファイルを閲覧するためには`main.tex`を開いた状態で`ctrl + alt + v`を入力します。
