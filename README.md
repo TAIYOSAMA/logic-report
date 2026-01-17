@@ -27,9 +27,9 @@
 本プロジェクトは WSL (Windows Subsystem for Linux) 上の TeX Live 環境で作成しています。
 
 ### 動作環境
-- **OS:** WSL2 (Ubuntu 22.04 LTS 等)
+- **OS:** WSL2 (Ubuntu 24.04.3 LTS)
 - **TeX 構成:** TeX Live (パッケージ: `texlive-full`)
-- **コンパイラ:** LuaLaTeX / latexmk
+- **コンパイラ:** LuaLaTeX
 - **エディタ:** Visual Studio Code (+ LaTeX Workshop 拡張)
 
 ### コンパイル方法
