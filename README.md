@@ -18,7 +18,7 @@
 
 ## 閲覧方法
 最新のレポート（PDFファイル）は以下のディレクトリから確認できます。
-- [report_main.pdf](./report_main.pdf) (※コンパイル済みPDFを管理に含める場合)
+- [main.pdf](./out/main.pdf)
 
 ---
 
