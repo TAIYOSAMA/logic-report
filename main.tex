@@ -22,10 +22,29 @@
 %URLに使われた記号でコンパイルに詰まる事態の回避
 \usepackage{url}
 
+
+% 定理環境の初期化
+\usepackage{amsthm}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Thm}[subsection]
+
+\theoremstyle{definition}
+\newtheorem{dfn}{Def}[subsection]
+
+\theoremstyle{definition}
+\newtheorem{ex}{Ex}[subsection]
+
+\theoremstyle{remark}
+\newtheorem{rem}{Rem}[subsection]
+
 %本体
 \begin{document}
 
-    \input{sections/cover.tex}          % 表紙
-    \input{sections/01_summary.tex}     % 授業内容のまとめ
+
+    \input{frontmatter/cover}          % 表紙
+    % \input{sections/01_summary.tex}     % 授業内容のまとめ
+    \input{sections/01_summary/index}
+    \input{sections/02_thoughts/index}
     
 \end{document}
