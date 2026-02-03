@@ -4,6 +4,7 @@
 
 %箇条書きの拡張
 \usepackage{enumerate}
+\usepackage{enumitem}
 
 %数学系
 \usepackage{amsmath}
@@ -26,20 +27,38 @@
 % 定理環境の初期化
 \usepackage{amsthm}
 
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=\medskipamount
+  \thm@postskip=\medskipamount
+}
+\makeatother
+
 \theoremstyle{plain}
 \newtheorem{thm}{Theorem}[subsection]
 
 \theoremstyle{definition}
-\newtheorem{dfn}{Definition}[subsection]
+\newtheorem{dfn}[thm]{Definition}
 
 \theoremstyle{definition}
-\newtheorem{ex}{Example}[subsection]
+\newtheorem{ex}[thm]{Example}
 
 \theoremstyle{remark}
-\newtheorem{rem}{Remark}[subsection]
+\newtheorem{rem}[thm]{Remark}
 
 \theoremstyle{definition}
-\newtheorem{ax}{Axiom}[subsection]
+\newtheorem{ax}[thm]{Axiom}
+
+
+\newcounter{step}[subsection]
+\renewcommand{\thestep}{\arabic{step}}
+
+\newcommand{\STEP}[1]{%
+  \refstepcounter{step}%
+  \par\medskip
+  \noindent\textbf{STEP.\thestep\ #1}
+}
+
 
 %本体
 \begin{document}

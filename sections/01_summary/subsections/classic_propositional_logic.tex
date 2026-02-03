@@ -1,11 +1,10 @@
-\subsection{古典命題論理}
+\section{古典命題論理}
+
+\subsection{論理学が扱う論理}
 
 まず初めに、論理学が扱う論理とは何なのか、例に従って簡単に確認する。
 
-\medskip
-
-\begin{ex}\mbox{}
-  \vspace{-0.5\baselineskip}
+\begin{ex}(推論)
   \begin{itemize}
     \item「$1 + 1 = 2$」, 「$1 + 1 = 2$」ならば『$1 + 1 + 1 = 3$』\\
           ゆえに、『$1 + 1 + 1 = 3$』
@@ -14,17 +13,12 @@
   \end{itemize}
 \end{ex}
 
-\medskip
-
 1つ目の例は確からしく見える。一方で、2つ目の例は一見すると違和感がある。仙台は日本の首都ではないからだ。
 しかし、論理の構造に着目すると、2つの例はどちらも同じ形をしていることがわかる。
 論理学とは、こうした論理の構造に焦点を当てた学問なのである。
 以下に授業で扱ったもう1つの例を提示しておく。
 
-\medskip
-
-\begin{ex}\mbox{}
-  \vspace{-0.5\baselineskip}
+\begin{ex}(推論)
   \begin{itemize}
     \item「nは偶数である」ならば『$n^2+3n+1$ は奇数である。』\\
           ゆえに、『$n^2+3n+1$は奇数でない』ならば「nは偶数ではない。」
@@ -35,4 +29,128 @@
 
 この例においても、どちらも対偶の形であるという点で共通している。
 論理学ではこうした論理の構造を形式言語を用いて表現していく。
+
+
+\subsection{古典命題論理}
+論理学の中でももっとも基本的な古典命題論理(Classic Propositional Logic)についてまとめる。
+
+
+
+
+
+% --------------------------------------------形式言語の導入--------------------------------------------------
+
+\STEP{形式言語の導入}
+
+\begin{dfn}
+  古典命題論理の言語$\mathcal{L}_{CPL}$(Classic Propositional Logic)は以下のものからなる。
+  \begin{itemize}
+    \item 命題変数: $p, q, r, \dots$
+    \item 論理結合子: $\lnot, \land, \lor, \to $
+    \item カッコ: $\lparen, \rparen$
+  \end{itemize}
+\end{dfn}
+
+\begin{dfn}
+  言語$\mathcal{L}_{CPL}$が与えられているとき、論理式を以下のように定める。
+  \begin{itemize}
+    \item 命題変数は論理式である
+    \item 2つの論理式$A, B$が与えられているとき、$\lnot A, (A \land B), (A \lor B), (A \to B)$も論理式である。
+    \item 上の2つの条件によってのみ論理式は決まる。
+  \end{itemize}
+\end{dfn}
+
+これらによって言語$\mathcal{L}_{CPL}$は定められる。以下は定義に沿った例である。
+
+\begin{ex}(論理式)
+  \begin{itemize}
+    \item $P$は論理式である。
+    \item $\lnot P, (\lnot P \to \lnot \lnot P), \lnot(P \to P)$は論理式である。
+    \item $P \lnot \to \land$や$\lnot \to QPR$は論理式ではない。
+  \end{itemize}
+\end{ex}
+
+\begin{dfn}
+  論理式の記述法は他にもあり、ここではポーランド記法を紹介する。
+  ここで、$n$は$\lnot$、$c$は$\to$、$k$は$\land$、$a$は$\lor$にそれぞれ対応している。
+\end{dfn}
+
+\begin{ex}(ポーランド記法)
+  \begin{itemize}
+    \item $\lnot p$ : $np$
+    \item $p \to q$ : $cpq$
+    \item $p \land q$ : $kpq$
+    \item $p \lor q$ : $apq$
+  \end{itemize}
+\end{ex}
+
+% --------------------------------------------形式言語の導入--------------------------------------------------
+
+
+
+
+
+
+% --------------------------------------------意味論---------------------------------------------------
+
+\STEP{意味論}
+
+ここでは論理式が、どの状況で真、偽になるかを定めていく。なお古典命題論理では
+\begin{itemize}
+  \item 排中律（Pである、またはPでないが成立する原理）
+  \item 無矛盾律（正しくてなおかつ間違っていることはない）
+\end{itemize}
+の２つの哲学により、真、偽という２つの状態にのみ従うとしている。
+
+\begin{dfn}(解釈)
+  言語$\mathcal{L}_{CPL}$に対する解釈（INTERPRETATION）とは、命題変数全体から{T, F}への関数である。
+\end{dfn}
+
+\begin{dfn}
+  言語$\mathcal{L}_{CPL}$に対して解釈$I$が与えられたとき、論理式全体が{T,F}への(付値)関数$v$(valuation)を以下のように定める。
+  \begin{equation}
+    v(p) = I(p)
+  \end{equation}
+  ここでpは命題変数である。
+\end{dfn}
+
+\begin{ex}
+  \begin{gather}
+    v(\lnot A) = T \iff v(A) = F\\
+    v(\lnot A) = F \iff v(A) = T
+  \end{gather}
+\end{ex}
+
+% --------------------------------------------意味論---------------------------------------------------
+
+
+
+
+
+
+
+% --------------------------------------------証明論---------------------------------------------------
+
+\STEP{証明論}
+
+証明論の展開方法は複数存在する。本講義では公理的方法を主に扱った。
+
+\begin{dfn}
+  古典命題論理の公理は以下の11個の図式からなる
+  \begin{enumerate}[label=Ax.\arabic*\ ]
+    \item $A \to (B \to A)$
+    \item $(A \to (B \to C)) \to ((A \to B) \to (A \to C))$
+    \item $(A \land B) \to A$
+    \item $(A \land B) \to B$
+    \item $(C \to A) \to ((C \to B) \to (C \to (A \land B)))$
+    \item $A \to (A \lor B)$
+    \item $B \to (A \lor B)$
+    \item $(A \to C) \to ((B \to C) \to ((A \lor B) \to C))$
+    \item $(A \to \lnot A) \to \lnot A$
+    \item $A \to (\lnot A \to B)$
+    \item $A \lor \lnot A$
+  \end{enumerate}
+\end{dfn}
+
+% --------------------------------------------証明論---------------------------------------------------
 
