@@ -59,7 +59,7 @@
   \begin{equation}
     v(w, p) = I(w, p)(pは命題変数)
   \end{equation}
-  またこのとき、
+  また、
   \begin{align}
     v(w, \lnot A) = T &\iff v(w, A) = F \\
     v(w, \lnot A) = F &\iff v(w, A) = T \\[6pt]
@@ -74,4 +74,35 @@
     v(w, \Diamond A) = T &\iff \text{ある } W \text{ の元 } x \text{ に対して } v(x, A) = T \\
     v(w, \Diamond A) = F &\iff \text{すべての } W \text{ の元 } x \text{ に対して } v(x, A) = F
   \end{align}
+\end{dfn}
+
+\STEP{証明論}
+
+\begin{dfn}
+  形式言語$\mathcal{L}_{ML}$のもとで体系$HS5$を以下のように定める。
+  \begin{flalign*}
+    &\text{Ax.1}  \hspace{4cm} A \to (B \to A) & &\\
+    &\text{Ax.2}  \hspace{4cm} (A \to (B \to C)) \to ((A \to B) \to (A \to C)) & &\\
+    &\text{Ax.3}  \hspace{4cm} (A \land B) \to A & & \\
+    &\text{Ax.4}  \hspace{4cm} (A \land B) \to B & & \\
+    &\text{Ax.5}  \hspace{4cm} (C \to A) \to ((C \to B) \to (C \to (A \land B))) & & \\
+    &\text{Ax.6}  \hspace{4cm} A \to (A \lor B) & & \\
+    &\text{Ax.7}  \hspace{4cm} B \to (A \lor B) & & \\
+    &\text{Ax.8}  \hspace{4cm} (A \to C) \to ((B \to C) \to ((A \lor B) \to C)) & & \\
+    &\text{Ax.9}  \hspace{4cm} (A \to \lnot A) \to \lnot A & & \\
+    &\text{Ax.10} \hspace{4cm} A \to (\lnot A \to B) & & \\
+    &\text{Ax.11} \hspace{4cm} A \lor \lnot A & & \\
+    &\text{Ax.12} \hspace{4cm} \Box (A \to B) \to (\Box A \to \Box) & & \\
+    &\text{Ax.13} \hspace{4cm} \Box A \to A & & \\
+    &\text{Ax.14} \hspace{4cm} \Box A \to \Box \Box A & & \\
+    &\text{Ax.15} \hspace{4cm} \lnot \Box A \to \Box \lnot \Box A & & \\
+    &\text{Ax.16} \hspace{4cm} \Diamond A \to \lnot \Box \lnot A & & \\
+    &\text{Ax.17} \hspace{4cm} \lnot \Box \lnot A \to \Diamond A & & \\
+  \end{flalign*}
+  以上の17個の公理図式に加えて、以下の2つの推論規則を加える。
+  \begin{flalign*}
+    &\text{MP} \hspace{4cm} \frac{A \ A \to B}{B} & & \\
+    &\text{RN} \hspace{4.5cm} \frac{A}{\Box A} & & \\
+  \end{flalign*}
+  ここで、RN(Rule of Necessation)は必然化則である。
 \end{dfn}
