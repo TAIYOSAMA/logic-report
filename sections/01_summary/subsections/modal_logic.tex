@@ -106,3 +106,37 @@
   \end{flalign*}
   ここで、RN(Rule of Necessation)は必然化則である。
 \end{dfn}
+
+\begin{dfn}
+  言語$\mathcal{L}_{ML}$のもとで、体系$HS5$に対して、$Th_{S5}$($S5$の定理集合)を以下のように定める。\\
+  $B$は$Th_{S5}$に含まれる$\iff$ある論理式列$C_1, \dots, C_k$があって、$C_k$は$B$で、各$C_i$は以下の2つの条件のうち1つを満たす。
+  \begin{itemize}
+    \item $C_i$はAx.1$\sim$Ax.17のうちの1つ。
+    \item $C_i$はその前に出現している論理式に対してMPまたはRNを適用することで得られる。
+  \end{itemize}
+\end{dfn}
+
+\begin{dfn}
+  言語$\mathcal{L}_{ML}$のもとで、体系$HS5$に対して、$\vdash_{HS5}$を以下のように定める。\\
+  $A_1, \dots, A_n, B$を論理式とするとき、
+  $A_1, \dots, A_n \vdash_{HS5} B \iff$ある論理式の列$D_1, \dots, D_l$があって、$D_l$は$B$で、各$D_j$は以下の3つの条件のうちの1つを満たす。
+  \begin{itemize}
+    \item $D_j$は$A_1, \dots, A_n$のうちの1つ
+    \item $D_j$は$Th_{S5}$に含まれる
+    \item $D_j$はその前に出現している論理式に対してMPを適用して得られる。
+  \end{itemize}
+  このとき$\vdash_{HS5}$を様相論理$S5$の証明論的帰結関係という。
+\end{dfn}
+
+\STEP{意味論と証明論の関係}
+
+\begin{thm}(SAUL KRIPKE)\\
+  言語$\mathcal{L}_{ML}$のもとで、$A_1, \dots, A_n, B$を論理式とするとき、以下が成り立つ。
+  \begin{equation}
+    A_1, \dots, A_n \models_{S5} B \iff A_1, \dots, A_n \vdash_{HS5} B 
+  \end{equation}
+  特に、
+  \begin{equation}
+    \models_{S5} B \iff B \text{は} Th_{S5} \text{に含まれる。}
+  \end{equation}
+\end{thm}
