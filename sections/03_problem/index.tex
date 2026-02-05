@@ -1,1 +1,134 @@
-\part{小問}
+\part{演習問題}
+
+\begin{prb}
+  $\models((A \to B) \to A) \to A$
+  \begin{equation}
+    v_0(((A \to B) \to A) \to A) = F \label{eq:1-1}
+  \end{equation}
+  となる解釈$I_0$があるとする。このとき\eqref{eq:1-1}と$\to$の偽条件より、
+  \begin{align}
+    v_0((A \to B) \to A) = T \label{eq:1-2} \\
+    v_0(A) = F \label{eq:1-3}
+  \end{align}
+  が同時に成り立つ。また、\eqref{eq:1-2}と$\to$の真理条件から、
+  \begin{align}
+    v_0(A \to B) = F \label{eq:1-4} \\
+    v_0(A) = T \label{eq:1-5}
+  \end{align}
+  の少なくとも一方は成り立つ。このとき、\eqref{eq:1-4}と$\to$の偽条件より、
+  \begin{align}
+    v_0(A) = T \label{eq:1-6} \\
+    v_0(B) = F \label{eq:1-7}
+  \end{align}
+  が同時に成り立つ。しかし、\eqref{eq:1-4}のときは\eqref{eq:1-3}と\eqref{eq:1-6}より矛盾し、\eqref{eq:1-5}のときも\eqref{eq:1-3}と矛盾する。\\
+  したがって、解釈$I_0$は存在しない。$\qed$
+\end{prb}
+
+\medskip
+\medskip
+
+\begin{prb}
+  $\models((A \to B) \lor (B \to C))$
+  \begin{equation}
+    v_0((A \to B) \lor (B \to C)) = F \label{eq:2-1}
+  \end{equation}
+  となる解釈$I_0$があるとする。\eqref{eq:2-1}と$\lor$の偽条件より、
+  \begin{align}
+    v_0(A \to B) = F \label{eq:2-2} \\
+    v_0(B \to C) = F \label{eq:2-3}
+  \end{align}
+  が同時に成り立つ。このとき、\eqref{eq:2-2}と$\to$の偽条件から、
+  \begin{align}
+    v_0(A) = T \label{eq:2-4} \\
+    v_0(B) = F \label{eq:2-5}
+  \end{align}
+  が同時に成り立つ。また、\eqref{eq:2-3}と$\to$の偽条件から、
+  \begin{align}
+    v_0(B) = T \label{eq:2-6} \\
+    v_0(C) = F \label{eq:2-7}
+  \end{align}
+  が同時に成り立つ。しかし、\eqref{eq:2-5}と\eqref{eq:2-6}は矛盾する。\\
+  したがって解釈$I_0$は存在しない。$\qed$
+\end{prb}
+
+\medskip
+\medskip
+
+\begin{prb}
+  $\models \lnot (A \to B) \to A$
+  \begin{equation}
+    v_0(\lnot (A \to B) \to A) = F \label{eq:3-1}
+  \end{equation}
+  となる解釈$I_0$があるとする。\eqref{eq:3-1}と$\to$の偽条件より、
+  \begin{align}
+    v_0(\lnot (A \to B)) = T \label{eq:3-2} \\
+    v_0(A) = F \label{eq:3-3}
+  \end{align}
+  が同時に成り立つ。\eqref{eq:3-2}と$\lnot$の真理条件から、
+  \begin{equation}
+    v_0(A \to B) = F \label{eq:3-4}
+  \end{equation}
+  \eqref{eq:3-4}と$\to$の偽条件より、
+  \begin{align}
+    v_0(A) = T \label{eq:3-5} \\
+    v_0(B) = F \label{eq:3-6}
+  \end{align}
+  が同時に成り立つ。しかし、\eqref{eq:3-3}と\eqref{eq:3-5}は矛盾する。\\
+  したがって、解釈$I_0$は存在しない。$\qed$
+\end{prb}
+
+\medskip
+\medskip
+
+\begin{prb}
+  $\models((A \to B) \to B) \to A$
+  \begin{equation}
+    v_0(((A \to B) \to B) \to A) = F \label{eq:4-1}
+  \end{equation}
+  となる解釈$I_0$があるとする。このとき\eqref{eq:4-1}と$\to$の偽条件より、
+  \begin{align}
+    v_0((A \to B) \to B) = T \label{eq:4-2} \\
+    v_0(A) = F \label{eq:4-3}
+  \end{align}
+  が同時に成り立つ。また、\eqref{eq:4-2}と$\to$の真理条件から、
+  \begin{align}
+    v_0(A \to B) = F \label{eq:4-4} \\
+    v_0(B) = T \label{eq:4-5}
+  \end{align}
+  の少なくとも一方は成り立つ。このとき、\eqref{eq:4-4}が成り立つと仮定すると$\to$の偽条件より、
+  \begin{align}
+    v_0(A) = T \label{eq:4-6} \\
+    v_0(B) = F \label{eq:4-7}
+  \end{align}
+  が同時に成り立つ。しかしこれは、\eqref{eq:4-3}と\eqref{eq:4-6}で矛盾が生じる。\\
+  一方、\eqref{eq:4-4}が成り立たないと仮定すると$v_0(A \to B) = T$であり、これと$\to$の真理条件から、
+  \begin{align}
+    v_0(A) = F \label{eq:4-8} \\
+    v_0(B) = T \label{eq:4-9}
+  \end{align}
+  の少なくとも一方が成り立つ。このとき、$v_0(A)=F$、$v_0(B)=T$であれば矛盾は生じず解釈$I_0$を定めることができる。
+  このとき反例は$v_0(A)=F$、$v_0(B)=T$ $\qed$
+\end{prb}
+
+\medskip
+\medskip
+
+\begin{prb}
+  $A \to B \models \lnot A \to \lnot B$
+  \begin{align}
+    v_0(A \to B) = T \label{eq:5-1} \\
+    v_0(\lnot A \to \lnot B) = F \label{eq:5-2}
+  \end{align}
+  が同時に成り立つ解釈$I_0$があるとする。このとき、\eqref{eq:5-2}と$\to$の偽条件より、
+  \begin{align}
+    v_0(\lnot A) = T \label{eq:5-5} \\
+    v_0(\lnot B) = F \label{eq:5-6}
+  \end{align}
+  が同時に成り立つ。また\eqref{eq:5-5}、\eqref{eq:5-6}それぞれについて$\lnot$の真理、偽条件から、
+  \begin{align}
+    v_0(A) = F \label{eq:5-7} \\
+    v_0(B) = T \label{eq:5-8}
+  \end{align}
+  が同時に成り立つ。実際、$v_0(A)=F$、$v_0(B)=T$と定めれば\eqref{eq:5-1}においても矛盾は生じず解釈$I_0$を定めることができる。
+  したがって、反例は$v_0(A)=F$、$v_0(B)=T$ $\qed$
+\end{prb}
