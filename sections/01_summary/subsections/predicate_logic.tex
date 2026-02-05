@@ -1,3 +1,25 @@
 \section{述語論理}
 
-述語論理を学修した。
+\subsection{古典述語論理}
+
+\begin{dfn}
+  古典述語論理の言語$\mathcal{L}_{PL}$(Predicate Logic)は次のものからなる。
+  \begin{itemize}
+    \item 個体変項: $x , y , z , \dots$
+    \item 個体定項: $a, b, c, \dots$
+    \item 述語: $P, Q, R, \dots$
+    \item 論理結合子: $\lnot, \land, \lor, \to$
+    \item 量化子: $\forall, \exists$
+    \item カッコ: $(, )$
+  \end{itemize}
+\end{dfn}
+
+\begin{dfn}
+  言語$\mathcal{L}_{PL}$が与えられたとき、論理式を以下のように定める。
+  \begin{itemize}
+    \item $t_1, \dots, t_n$が項であり、$P$が$n$項連続のとき、$P_{t_1 \dots t_n}$は論理式である。(とくに原子式と呼ばれる)
+    \item 2つの論理式$A, B$があるとき、$A$, $(A \land B)$, $(A \lor B)$, $(A \to B)$は論理式である。
+    \item 論理式$A$と個体変項があるとき、$\forall_{x}A, \exists_{x}A$は論理式である。
+  \end{itemize}
+  上の3つの条件によってのみ論理式は決まる。
+\end{dfn}
