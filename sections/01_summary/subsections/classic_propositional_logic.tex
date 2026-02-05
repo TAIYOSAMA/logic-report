@@ -31,12 +31,11 @@
 論理学ではこうした論理の構造を形式言語を用いて表現していく。
 
 
+
+\pagebreak
+
 \subsection{古典命題論理}
 論理学の中でももっとも基本的な古典命題論理(Classic Propositional Logic)についてまとめる。
-
-
-
-
 
 % --------------------------------------------形式言語の導入--------------------------------------------------
 
@@ -49,6 +48,7 @@
     \item 論理結合子: $\lnot, \land, \lor, \to $
     \item カッコ: $\lparen, \rparen$
   \end{itemize}
+  ここで、論理演算子はそれぞれ順に、否定、かつ、または、ならばをそれぞれ表す。
 \end{dfn}
 
 \begin{dfn}
@@ -90,7 +90,7 @@
 
 
 
-
+\pagebreak
 % --------------------------------------------意味論---------------------------------------------------
 
 \STEP{意味論}
@@ -102,23 +102,29 @@
 \end{itemize}
 の２つの哲学により、真、偽という２つの状態にのみ従うとしている。
 
-\begin{dfn}(解釈)
-  言語$\mathcal{L}_{CPL}$に対する解釈（INTERPRETATION）とは、命題変数全体から{T, F}への関数である。
+\begin{dfn}
+  言語$\mathcal{L}_{CPL}$に対する解釈（INTERPRETATION）とは、命題変数全体から\{T, F\}への関数である。
 \end{dfn}
 
 \begin{dfn}
-  言語$\mathcal{L}_{CPL}$に対して解釈$I$が与えられたとき、論理式全体が{T,F}への(付値)関数$v$(valuation)を以下のように定める。
+  言語$\mathcal{L}_{CPL}$に対して解釈$I$が与えられたとき、論理式全体が\{T,F\}への(付値)関数$v$(valuation)を以下のように定める。
   \begin{equation}
     v(p) = I(p)
   \end{equation}
   ここでpは命題変数である。
 \end{dfn}
 
-\begin{ex}
-  \begin{gather}
-    v(\lnot A) = T \iff v(A) = F\\
-    v(\lnot A) = F \iff v(A) = T
-  \end{gather}
+\begin{ex}(付値)
+  \begin{align}
+    v(\lnot A) = T &\iff v(A) = F\\
+    v(\lnot A) = F &\iff v(A) = T\\
+    v(A \land B) = T &\iff v(A) = T \ かつ \ v(B) = T\\
+    v(A \land B) = F &\iff v(A) = F \ または \ v(B) = F\\
+    v(A \lor B) = F &\iff v(A) = T \ または \ v(B) = T\\
+    v(A \lor B) = F &\iff v(A) = F \ かつ \ v(B) = F\\
+    v(A \to B) = T &\iff v(A) = F \ または \ v(B) = T\\
+    v(A \to B) = F &\iff v(A) = T \ かつ \ v(B) = F
+  \end{align}
 \end{ex}
 
 % --------------------------------------------意味論---------------------------------------------------
@@ -136,21 +142,48 @@
 証明論の展開方法は複数存在する。本講義では公理的方法を主に扱った。
 
 \begin{dfn}
-  古典命題論理の公理は以下の11個の図式からなる
-  \begin{enumerate}[label=Ax.\arabic*\ ]
-    \item $A \to (B \to A)$
-    \item $(A \to (B \to C)) \to ((A \to B) \to (A \to C))$
-    \item $(A \land B) \to A$
-    \item $(A \land B) \to B$
-    \item $(C \to A) \to ((C \to B) \to (C \to (A \land B)))$
-    \item $A \to (A \lor B)$
-    \item $B \to (A \lor B)$
-    \item $(A \to C) \to ((B \to C) \to ((A \lor B) \to C))$
-    \item $(A \to \lnot A) \to \lnot A$
-    \item $A \to (\lnot A \to B)$
-    \item $A \lor \lnot A$
-  \end{enumerate}
+  古典命題論理の公理は以下の11個の図式からなる。
+  \begin{flalign*}
+    &\text{Ax.1}  \hspace{4cm} A \to (B \to A) & &\\
+    &\text{Ax.2}  \hspace{4cm} (A \to (B \to C)) \to ((A \to B) \to (A \to C)) & &\\
+    &\text{Ax.3}  \hspace{4cm} (A \land B) \to A & & \\
+    &\text{Ax.4}  \hspace{4cm} (A \land B) \to B & & \\
+    &\text{Ax.5}  \hspace{4cm} (C \to A) \to ((C \to B) \to (C \to (A \land B))) & & \\
+    &\text{Ax.6}  \hspace{4cm} A \to (A \lor B) & & \\
+    &\text{Ax.7}  \hspace{4cm} B \to (A \lor B) & & \\
+    &\text{Ax.8}  \hspace{4cm} (A \to C) \to ((B \to C) \to ((A \lor B) \to C)) & & \\
+    &\text{Ax.9}  \hspace{4cm} (A \to \lnot A) \to \lnot A & & \\
+    &\text{Ax.10} \hspace{4cm} A \to (\lnot A \to B) & & \\
+    &\text{Ax.11} \hspace{4cm} A \lor \lnot A & & \\
+  \end{flalign*}
+
+  これらに加えて、以下の推論規則を加える。
+  MP(MODUS PONENS)
+  \begin{equation*}
+    \frac{A \  A \to B}{B}
+  \end{equation*}
+\end{dfn}
+
+\begin{dfn}
+  形式言語$\mathcal{L}_CPL$のもとで、体系HCPLに対して、$\vdash_{CPL}$を以下のように定める。\\
+  $A1, \dots , An, B$を論理式とするとき、$A1, \dots, An \vdash B \iff$ある論理式の列$C1, \dots, Cn$があって、$Cn$は$B$で書き、$Ci$は以下の3つの条件のうちの1つを満たす。
+  \begin{itemize}
+    \item $Ci$は$A1, \dots, An$のうちの1つ
+    \item $Ci$はAx.1$\sim$Ax.11のうちの1つ
+    \item $Ci$はすでに出現している2つの論理式に対して、MPを適用することで得られる。
+  \end{itemize}
+  このとき、$\vdash_{CPL}$を古典命題論理の証明論的帰結関係という。
 \end{dfn}
 
 % --------------------------------------------証明論---------------------------------------------------
 
+
+
+% --------------------------------------------意味論と証明論の関係----------------------------------------------------
+
+\STEP{意味論と証明論の関係}
+
+授業を休んだため省略。
+
+
+% --------------------------------------------意味論と証明論の関係----------------------------------------------------

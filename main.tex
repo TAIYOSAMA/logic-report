@@ -34,20 +34,35 @@
 }
 \makeatother
 
+% \theoremstyle{plain}
+% \newtheorem{thm}{Theorem}[subsection]
+
+% \theoremstyle{definition}
+% \newtheorem{dfn}[thm]{Definition}
+
+% \theoremstyle{definition}
+% \newtheorem{ex}[thm]{Example}
+
+% \theoremstyle{remark}
+% \newtheorem{rem}[thm]{Remark}
+
+% \theoremstyle{definition}
+% \newtheorem{ax}[thm]{Axiom}
+
 \theoremstyle{plain}
-\newtheorem{thm}{Theorem}[subsection]
+\newtheorem{thm}{定理}[subsection]
 
 \theoremstyle{definition}
-\newtheorem{dfn}[thm]{Definition}
+\newtheorem{dfn}[thm]{定義}
 
 \theoremstyle{definition}
-\newtheorem{ex}[thm]{Example}
+\newtheorem{ex}[thm]{例}
 
 \theoremstyle{remark}
-\newtheorem{rem}[thm]{Remark}
+\newtheorem{rem}[thm]{注意}
 
 \theoremstyle{definition}
-\newtheorem{ax}[thm]{Axiom}
+\newtheorem{ax}[thm]{公理}
 
 
 \newcounter{step}[subsection]
@@ -55,7 +70,7 @@
 
 \newcommand{\STEP}[1]{%
   \refstepcounter{step}%
-  \par\medskip
+  \par\medskip\medskip
   \noindent\textbf{STEP.\thestep\ #1}
 }
 
