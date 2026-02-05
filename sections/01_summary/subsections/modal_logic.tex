@@ -35,3 +35,43 @@
   \end{align}
 \end{ex}
 
+\STEP{意味論}
+
+ここでは可能世界意味論もしくはクリプト意味論とも呼ばれるものを紹介する。
+これはあくまで代表的なものであり、唯一絶対の意味論ではないことに注意したい。
+
+\begin{dfn}
+  言語$\mathcal{L}_{ML}$に対する$S5$モデルとは、組<$W$, $@$, $I$>である。このとき、
+  \begin{itemize}
+    \item $W$は空でない集合
+    \item $@$はWに含まれる元のうちの1つ
+    \item $I$は$W$と命題変数から\{$T$, $F$\}への関数
+  \end{itemize}
+\end{dfn}
+
+\begin{rem}
+  ルイスとラングフォードは$S1$、$S2$、$S3$、$S4$、$S5$の5つの体系を証明論の立場から導入した。ここでは特に$S5$を扱う。
+\end{rem}
+
+\begin{dfn}
+  言語$\mathcal{L}_{ML}$に対して、$S5$モデル<$W$, $@$, $I$>が与えられたとき、$W$と論理式全体から\{$T$, $F$\}への関数$v$を以下のように定める。
+  すべての$W$の元($w$)に対して、
+  \begin{equation}
+    v(w, p) = I(w, p)(pは命題変数)
+  \end{equation}
+  またこのとき、
+  \begin{align}
+    v(w, \lnot A) = T &\iff v(w, A) = F \\
+    v(w, \lnot A) = F &\iff v(w, A) = T \\[6pt]
+    v(w, A \land B) = T &\iff v(w, A) = T \ \text{かつ} \ v(w, B) = T \\
+    v(w, A \land B) = F &\iff v(w, A) = F \ \text{または} \ v(w, B) = F \\[6pt]
+    v(w, A \lor B) = T &\iff v(w, A) = T \ \text{または} \ v(w, B) = T \\
+    v(w, A \lor B) = F &\iff v(w, A) = F \ \text{かつ} \ v(w, B) = F \\[6pt]
+    v(w, A \to B) = T &\iff v(w, A) = F \ \text{または} \ v(w, B) = T \\
+    v(w, A \to B) = F &\iff v(w, A) = T \ \text{かつ} \ v(w, B) = F \\[6pt]
+    v(w, \Box A) = T &\iff \text{すべての } W \text{ の元 } x \text{ に対して } v(x, A) = T \\
+    v(w, \Box A) = F &\iff \text{ある } W \text{ の元 } x \text{ に対して } v(x, A) = F \\[6pt]
+    v(w, \Diamond A) = T &\iff \text{ある } W \text{ の元 } x \text{ に対して } v(x, A) = T \\
+    v(w, \Diamond A) = F &\iff \text{すべての } W \text{ の元 } x \text{ に対して } v(x, A) = F
+  \end{align}
+\end{dfn}
